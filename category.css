@@ -949,8 +949,39 @@
 @media (max-width: 768px) {
     /* 모바일에서 breadcrumb 여백 제거 */
     .breadcrumb {
-        padding: 10px 0;
+        padding: 12px 0;
         margin-bottom: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .breadcrumb .container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .breadcrumb .container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .breadcrumb nav {
+        gap: 15px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .breadcrumb a {
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .filter-reset-btn {
+        flex-shrink: 0;
+        font-size: 12px;
+        padding: 6px 14px;
+        white-space: nowrap;
     }
     
     /* 모바일에서 히어로 섹션 여백 제거 */

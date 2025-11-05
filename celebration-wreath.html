@@ -14,24 +14,8 @@
 
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header category-header">
         <div class="container">
-            <div class="header-top">
-                <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> 1588-1234</span>
-                    <span><i class="fas fa-clock"></i> 평일 09:00-18:00</span>
-                </div>
-                <div class="search-box">
-                    <input type="text" placeholder="원하는 꽃을 검색해보세요">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="user-menu">
-                    <a href="#" class="login-btn">로그인</a>
-                    <a href="#" class="signup-btn">회원가입</a>
-                    <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> 장바구니</a>
-                </div>
-            </div>
-
             <div class="header-main">
                 <div class="logo">
                     <a href="index.html">
@@ -39,27 +23,34 @@
                     </a>
                 </div>
 
-                <button class="mobile-menu-toggle" aria-label="메뉴 열기">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="celebration-wreath.html" class="nav-link active">축하화환</a></li>
-                        <li><a href="category.html?category=condolence" class="nav-link">근조화환</a></li>
-                        <li><a href="category.html?category=rice" class="nav-link">쌀화환</a></li>
-                        <li><a href="category.html?category=opening" class="nav-link">1단·2단화환</a></li>
-                        <li><a href="category.html?category=congratulation" class="nav-link">동양란</a></li>
-                        <li><a href="category.html?category=western" class="nav-link">서양란</a></li>
-                        <li><a href="category.html?category=flower-basket" class="nav-link">관엽화분</a></li>
-                        <li><a href="category.html?category=bouquet" class="nav-link">꽃다발/꽃상자</a></li>
-                        <li><a href="category.html?category=flower-board" class="nav-link">금전수/스투키</a></li>
-                        <li><a href="category.html?category=money-tree" class="nav-link">꽃바구니</a></li>
-                    </ul>
-                </nav>
+                <div class="header-right">
+                    <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="#" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
             </div>
+
+            <nav class="main-nav">
+                <div class="mobile-nav-header">
+                    <h3>메뉴</h3>
+                    <button class="mobile-nav-close" aria-label="메뉴 닫기">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul>
+                    <li><a href="#" class="nav-link">오늘도착+</a></li>
+                    <li><a href="celebration-wreath.html" class="nav-link active">트렌드픽</a></li>
+                    <li><a href="category.html?category=bouquet" class="nav-link">DIY꽃시장</a></li>
+                    <li><a href="category.html?category=congratulation" class="nav-link">정기구독</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
