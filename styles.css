@@ -1380,33 +1380,37 @@ Footer */
     }
 
     .quick-order {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .quick-order h3 {
-        font-size: 24px;
-        margin-bottom: 40px;
+        font-size: 22px;
+        margin-bottom: 30px;
     }
 
     .quick-categories {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px 15px;
-        max-width: 100%;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 25px 10px !important;
+        max-width: 100% !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
     }
 
     .quick-item {
         width: 100%;
+        margin: 0;
     }
 
     .quick-icon-img {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
         margin-bottom: 8px;
     }
 
     .quick-item h4 {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.3;
     }
 
     .featured-products {
@@ -1430,9 +1434,48 @@ Footer */
         height: 350px;
     }
 
+    .services {
+        padding: 60px 0;
+    }
+
     .services-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 0 24px;
+        margin: 0 -24px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .services-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-item {
+        flex: 0 0 calc(100% - 48px);
+        scroll-snap-align: center;
+        padding: 30px 20px;
+        background: #f8f9fa;
+        border-radius: 12px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .service-item h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 13px;
+        line-height: 1.5;
     }
 
     .footer {
