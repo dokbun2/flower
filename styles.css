@@ -42,21 +42,49 @@ h6 {
     }
 }
 
-/* Hero Header Wrapper */
-.hero-header-wrapper {
-    position: relative;
-    min-height: 600px;
-}
-
 /* Header Styles - Overlay */
 .header-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background: transparent;
     z-index: 100;
     padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.header-overlay.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-overlay.scrolled .logo h1,
+.header-overlay.scrolled .icon-btn,
+.header-overlay.scrolled .nav-link {
+    color: #333;
+}
+
+.header-overlay.scrolled .search-box {
+    background: #f5f5f5;
+    border-color: #e0e0e0;
+}
+
+.header-overlay.scrolled .search-box input {
+    color: #333;
+}
+
+.header-overlay.scrolled .search-box input::placeholder {
+    color: #999;
+}
+
+.header-overlay.scrolled .search-box button {
+    color: #333;
+}
+
+.header-overlay.scrolled .main-nav {
+    border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 .header-main {
@@ -334,16 +362,6 @@ h6 {
         display: flex;
         justify-content: space-around;
     }
-
-    /* Add padding to body to prevent content from being hidden behind bottom nav */
-    body {
-        padding-bottom: 70px;
-    }
-
-    /* Hide header-top completely on mobile */
-    .header-top {
-        display: none;
-    }
 }
 
 .main-nav ul {
@@ -479,6 +497,7 @@ h6 {
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .hero-slider {
@@ -1165,70 +1184,174 @@ Footer */
 }
 
 @media (max-width: 768px) {
+
+    /* Body padding */
+    body {
+        padding-top: 0;
+        padding-bottom: 70px;
+    }
+
     .header-top {
-        padding: 10px 0;
+        display: none;
     }
 
-    .search-box {
-        width: 100%;
-        max-width: 100%;
+    /* 헤더 오버레이 - absolute로 변경 */
+    .header-overlay {
+        position: absolute;
+        background: transparent;
+        padding: 15px 0;
     }
 
+    /* 검색창 완전히 숨기기 */
+    .header-center {
+        display: none !important;
+    }
+
+    /* 헤더 메인 */
     .header-main {
+        display: flex;
         justify-content: space-between;
-        padding: 16px 0;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 0;
     }
 
+    /* 로고 */
+    .logo {
+        flex: 0 0 auto;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* 헤더 오른쪽 */
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 0 0 auto;
+    }
+
+    .icon-btn {
+        font-size: 20px;
+    }
+
+    /* 햄버거 메뉴 */
     .mobile-menu-toggle {
         display: flex;
+        order: -1;
     }
 
+    .mobile-menu-toggle span {
+        background: white;
+    }
+
+    /* 메인 네비게이션 */
     .main-nav {
         position: fixed;
         top: 0;
         left: -100%;
         width: 280px;
         height: 100vh;
-        background: white;
-        z-index: 1000;
+        background: #ffffff;
+        z-index: 1001;
         transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         overflow-y: auto;
+        border-top: none;
+        padding-top: 0;
     }
 
     .main-nav.active {
         left: 0;
     }
 
+    /* 모바일 네비게이션 헤더 */
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .mobile-nav-header h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333333;
+        margin: 0;
+    }
+
+    .mobile-nav-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #333333;
+        cursor: pointer;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-close:hover {
+        background: #f5f5f5;
+    }
+
     .main-nav ul {
         flex-direction: column;
         gap: 0;
-        padding: 80px 0 40px;
+        padding: 0;
+        justify-content: flex-start;
     }
 
     .main-nav li {
         width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .nav-link {
+    .main-nav .nav-link {
         display: block;
-        padding: 16px 24px;
-        font-size: 15px;
+        padding: 18px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333 !important;
+        text-decoration: none;
+        transition: all 0.3s ease;
     }
 
-    .nav-link::after {
+    .main-nav .nav-link::after {
         display: none;
     }
 
-    .nav-link:hover,
-    .nav-link.active {
-        background: #FAF8F5;
-        color: #5A6C5C;
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+        background: #F5F5F5;
+        color: #5A6C5C !important;
+        padding-left: 28px;
+    }
+
+    /* 히어로 섹션 */
+    .hero {
+        margin-top: 0;
+        min-height: 100vh;
     }
 
     .hero-slider {
-        height: 60vh;
+        height: 100vh;
     }
 
     .slide-content h2 {
@@ -1237,6 +1360,23 @@ Footer */
 
     .slide-content p {
         font-size: 14px;
+    }
+
+    .hero-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-nav.prev {
+        left: 15px;
+    }
+
+    .hero-nav.next {
+        right: 15px;
+    }
+
+    .hero-dots {
+        bottom: 90px;
     }
 
     .quick-order {

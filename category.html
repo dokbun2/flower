@@ -67,136 +67,26 @@
     <div class="breadcrumb">
         <div class="container">
             <nav>
-                <a href="index.html">홈</a>
-                <i class="fas fa-chevron-right"></i>
-                <span id="categoryName">꽃다발</span>
+                <a href="index.html">MD 추천</a>
+                <a href="#" class="active">플랜테리어</a>
+                <a href="#">라임펫</a>
+                <a href="#">크기별</a>
+                <a href="#" id="categoryName">개업 축하화환</a>
             </nav>
+            <button class="filter-reset-btn">전체보기</button>
         </div>
     </div>
 
-    <!-- Category Header -->
-    <section class="category-header">
+    <!-- Category Title -->
+    <section class="category-title-section">
         <div class="container">
-            <div class="category-info">
-                <h1 id="categoryTitle">꽃다발</h1>
-                <p id="categoryDescription">특별한 순간을 더욱 아름답게 만들어줄 다양한 꽃다발을 만나보세요</p>
-            </div>
-            <div class="category-stats">
-                <span class="total-products">총 <strong id="productCount">24</strong>개 상품</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter and Sort -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-header">
-                <div class="filter-toggle">
-                    <button class="filter-btn">
-                        <i class="fas fa-filter"></i>
-                        필터
-                    </button>
-                </div>
-
-                <div class="sort-options">
-                    <select id="sortSelect">
-                        <option value="popular">인기순</option>
-                        <option value="price-low">가격 낮은순</option>
-                        <option value="price-high">가격 높은순</option>
-                        <option value="newest">최신순</option>
-                        <option value="rating">평점순</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filter-panel" id="filterPanel">
-                <div class="filter-group">
-                    <h4>가격대</h4>
-                    <div class="price-range">
-                        <div class="price-inputs">
-                            <input type="number" id="minPrice" placeholder="최소 가격" min="0">
-                            <span>~</span>
-                            <input type="number" id="maxPrice" placeholder="최대 가격" min="0">
-                        </div>
-                        <div class="price-presets">
-                            <button class="price-preset" data-min="0" data-max="50000">5만원 이하</button>
-                            <button class="price-preset" data-min="50000" data-max="100000">5-10만원</button>
-                            <button class="price-preset" data-min="100000" data-max="200000">10-20만원</button>
-                            <button class="price-preset" data-min="200000" data-max="999999">20만원 이상</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <h4>꽃 종류</h4>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox" value="rose" checked>
-                            <span>장미</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="lily">
-                            <span>백합</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="carnation">
-                            <span>카네이션</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="sunflower">
-                            <span>해바라기</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="mixed">
-                            <span>혼합꽃다발</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <h4>색상</h4>
-                    <div class="color-options">
-                        <button class="color-option" data-color="red" style="background: #e91e63;"></button>
-                        <button class="color-option" data-color="pink" style="background: #f8bbd9;"></button>
-                        <button class="color-option" data-color="white"
-                            style="background: #ffffff; border: 1px solid #ddd;"></button>
-                        <button class="color-option" data-color="yellow" style="background: #ffc107;"></button>
-                        <button class="color-option" data-color="purple" style="background: #9c27b0;"></button>
-                        <button class="color-option" data-color="mixed"
-                            style="background: linear-gradient(45deg, #e91e63, #ffc107, #9c27b0);"></button>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <h4>용도</h4>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox" value="birthday">
-                            <span>생일</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="anniversary">
-                            <span>기념일</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="proposal">
-                            <span>프로포즈</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="graduation">
-                            <span>졸업식</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="congratulation">
-                            <span>축하</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-actions">
-                    <button class="reset-filters">필터 초기화</button>
-                    <button class="apply-filters">필터 적용</button>
-                </div>
+            <h1 id="categoryTitle">MD 추천, 의미와 기능이 담긴 선물</h1>
+            <div class="category-filters">
+                <button class="filter-chip active">전체</button>
+                <button class="filter-chip">금전운</button>
+                <button class="filter-chip">행복</button>
+                <button class="filter-chip">번영</button>
+                <button class="filter-chip">금기정화</button>
             </div>
         </div>
     </section>
@@ -206,15 +96,6 @@
         <div class="container">
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be loaded here -->
-            </div>
-
-            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
-                <i class="fas fa-spinner fa-spin"></i>
-                <span>상품을 불러오는 중...</span>
-            </div>
-
-            <div class="load-more-container">
-                <button class="load-more-btn" id="loadMoreBtn">더 많은 상품 보기</button>
             </div>
         </div>
     </section>

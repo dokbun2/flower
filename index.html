@@ -12,89 +12,93 @@
 </head>
 
 <body>
-    <!-- Header with Hero -->
-    <div class="hero-header-wrapper">
-        <header class="header header-overlay">
-            <div class="container">
-                <div class="header-main">
-                    <div class="logo">
-                        <a href="index.html">
-                            <h1><i class="fas fa-seedling"></i> 꽃집처녀</h1>
-                        </a>
-                    </div>
+    <!-- Header -->
+    <header class="header header-overlay">
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><i class="fas fa-seedling"></i> 꽃집처녀</h1>
+                    </a>
+                </div>
 
-                    <div class="header-center">
-                        <div class="search-box">
-                            <input type="text" placeholder="원하는 꽃을 검색해보세요">
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="header-right">
-                        <button class="mobile-menu-toggle" aria-label="메뉴 열기">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
-                        <a href="#" class="icon-btn cart-btn">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
+                <div class="header-center">
+                    <div class="search-box">
+                        <input type="text" placeholder="원하는 꽃을 검색해보세요">
+                        <button type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
 
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="#" class="nav-link">오늘도착+</a></li>
-                        <li><a href="celebration-wreath.html" class="nav-link">트렌드픽</a></li>
-                        <li><a href="category.html?category=bouquet" class="nav-link">DIY꽃시장</a></li>
-                        <li><a href="category.html?category=congratulation" class="nav-link">정기구독</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-slider">
-                <div class="slide active">
-                    <div class="slide-image">
-                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_0.png" alt="아티스트 컬렉션">
-                    </div>
-                    <div class="slide-content">
-                        <h2>아티스트 컬렉션</h2>
-                        <p>by GODA</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="slide-image">
-                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_0.png" alt="특별한 날">
-                    </div>
-                    <div class="slide-content">
-                        <h2>특별한 날을 위한</h2>
-                        <p>아름다운 꽃다발</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="slide-image">
-                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_0.png" alt="계절의 꽃">
-                    </div>
-                    <div class="slide-content">
-                        <h2>계절을 담은</h2>
-                        <p>신선한 꽃</p>
-                    </div>
+                <div class="header-right">
+                    <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="#" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
                 </div>
             </div>
-            <button class="hero-nav prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-            <button class="hero-nav next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
-            <div class="hero-dots">
-                <span class="hero-dot active" onclick="currentSlide(0)"></span>
-                <span class="hero-dot" onclick="currentSlide(1)"></span>
-                <span class="hero-dot" onclick="currentSlide(2)"></span>
+
+            <nav class="main-nav">
+                <div class="mobile-nav-header">
+                    <h3>메뉴</h3>
+                    <button class="mobile-nav-close" aria-label="메뉴 닫기">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul>
+                    <li><a href="#" class="nav-link">오늘도착+</a></li>
+                    <li><a href="celebration-wreath.html" class="nav-link">트렌드픽</a></li>
+                    <li><a href="category.html?category=bouquet" class="nav-link">DIY꽃시장</a></li>
+                    <li><a href="category.html?category=congratulation" class="nav-link">정기구독</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-image">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_0.png" alt="아티스트 컬렉션">
+                </div>
+                <div class="slide-content">
+                    <h2>아티스트 컬렉션</h2>
+                    <p>by GODA</p>
+                </div>
             </div>
-        </section>
-    </div>
+            <div class="slide">
+                <div class="slide-image">
+                    <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_0.png" alt="특별한 날">
+                </div>
+                <div class="slide-content">
+                    <h2>특별한 날을 위한</h2>
+                    <p>아름다운 꽃다발</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-image">
+                    <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_0.png" alt="계절의 꽃">
+                </div>
+                <div class="slide-content">
+                    <h2>계절을 담은</h2>
+                    <p>신선한 꽃</p>
+                </div>
+            </div>
+        </div>
+        <button class="hero-nav prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="hero-nav next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="hero-dots">
+            <span class="hero-dot active" onclick="currentSlide(0)"></span>
+            <span class="hero-dot" onclick="currentSlide(1)"></span>
+            <span class="hero-dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
 
     <!-- Quick Order -->
     <section class="quick-order">
@@ -306,7 +310,8 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="프리미엄 화환">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png"
+                            alt="프리미엄 화환">
                     </div>
                     <div class="product-info">
                         <h4>프리미엄 화환</h4>

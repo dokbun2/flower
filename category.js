@@ -172,10 +172,6 @@ const productData = {
 
 // Category configurations
 const categoryConfig = {
-    celebration: {
-        name: '축하화환',
-        description: '개업, 승진 등 축하의 마음을 전하는 품격있는 화환'
-    },
     condolence: {
         name: '근조화환',
         description: '고인의 명복을 비는 정성스러운 조의 화환'
@@ -215,18 +211,9 @@ const categoryConfig = {
 };
 
 // Global variables
-let currentCategory = 'bouquet';
+let currentCategory = 'condolence';
 let currentProducts = [];
 let filteredProducts = [];
-let currentPage = 1;
-let productsPerPage = 12;
-let currentFilters = {
-    minPrice: null,
-    maxPrice: null,
-    types: [],
-    colors: [],
-    purposes: []
-};
 let currentSort = 'popular';
 
 // Initialize page
@@ -254,9 +241,8 @@ function updateCategoryInfo() {
     const config = categoryConfig[currentCategory];
     
     document.getElementById('categoryName').textContent = config.name;
-    document.getElementById('categoryTitle').textContent = config.name;
-    document.getElementById('categoryDescription').textContent = config.description;
-    document.title = `${config.name} - 플라워샵`;
+    document.getElementById('categoryTitle').textContent = `MD 추천, ${config.description}`;
+    document.title = `${config.name} - 꽃집처녀`;
     
     // Update active nav
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -268,43 +254,17 @@ function updateCategoryInfo() {
 }
 
 function loadProducts() {
-    currentProducts = productData[currentCategory] || [];
+    // category-data.js에서 데이터 가져오기
+    if (typeof newProductData !== 'undefined' && newProductData[currentCategory]) {
+        currentProducts = newProductData[currentCategory];
+    } else {
+        currentProducts = productData[currentCategory] || [];
+    }
     applyFiltersAndSort();
 }
 
 function applyFiltersAndSort() {
-    // Apply filters
-    filteredProducts = currentProducts.filter(product => {
-        // Price filter
-        if (currentFilters.minPrice !== null && product.price < currentFilters.minPrice) {
-            return false;
-        }
-        if (currentFilters.maxPrice !== null && product.price > currentFilters.maxPrice) {
-            return false;
-        }
-        
-        // Type filter
-        if (currentFilters.types.length > 0 && !currentFilters.types.includes(product.type)) {
-            return false;
-        }
-        
-        // Color filter
-        if (currentFilters.colors.length > 0 && !currentFilters.colors.includes(product.color)) {
-            return false;
-        }
-        
-        // Purpose filter
-        if (currentFilters.purposes.length > 0) {
-            const hasMatchingPurpose = currentFilters.purposes.some(purpose => 
-                product.purpose.includes(purpose)
-            );
-            if (!hasMatchingPurpose) {
-                return false;
-            }
-        }
-        
-        return true;
-    });
+    filteredProducts = [...currentProducts];
     
     // Apply sorting
     filteredProducts.sort((a, b) => {
@@ -313,21 +273,15 @@ function applyFiltersAndSort() {
                 return a.price - b.price;
             case 'price-high':
                 return b.price - a.price;
-            case 'newest':
-                return b.isNew - a.isNew;
-            case 'rating':
-                return b.rating - a.rating;
+            case 'discount':
+                const discountA = a.originalPrice ? ((a.originalPrice - a.price) / a.originalPrice) * 100 : 0;
+                const discountB = b.originalPrice ? ((b.originalPrice - b.price) / b.originalPrice) * 100 : 0;
+                return discountB - discountA;
             case 'popular':
             default:
                 return b.reviewCount - a.reviewCount;
         }
     });
-    
-    // Update product count
-    document.getElementById('productCount').textContent = filteredProducts.length;
-    
-    // Reset pagination
-    currentPage = 1;
     
     // Render products
     renderProducts();
@@ -335,96 +289,40 @@ function applyFiltersAndSort() {
 
 function renderProducts() {
     const productsGrid = document.getElementById('productsGrid');
-    const startIndex = 0;
-    const endIndex = currentPage * productsPerPage;
-    const productsToShow = filteredProducts.slice(startIndex, endIndex);
     
-    if (productsToShow.length === 0) {
+    if (filteredProducts.length === 0) {
         productsGrid.innerHTML = `
             <div class="empty-state">
                 <i class="fas fa-search"></i>
-                <h3>검색 결과가 없습니다</h3>
-                <p>다른 조건으로 검색해보세요</p>
-                <button onclick="resetFilters()">필터 초기화</button>
+                <h3>상품이 없습니다</h3>
+                <p>다른 카테고리를 확인해보세요</p>
             </div>
         `;
-        document.getElementById('loadMoreBtn').style.display = 'none';
         return;
     }
     
-    productsGrid.innerHTML = productsToShow.map(product => createProductCard(product)).join('');
-    
-    // Show/hide load more button
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    if (endIndex >= filteredProducts.length) {
-        loadMoreBtn.style.display = 'none';
-    } else {
-        loadMoreBtn.style.display = 'block';
-    }
-    
-    // Initialize product card events
+    productsGrid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
     initializeProductCards();
 }
 
 function createProductCard(product) {
-    const badges = product.badges.map(badge => {
-        const badgeText = {
-            'best': '베스트',
-            'new': '신상품',
-            'sale': '할인'
-        };
-        return `<span class="product-badge ${badge}">${badgeText[badge]}</span>`;
-    }).join('');
-    
-    const originalPriceHtml = product.originalPrice ? 
-        `<span class="original-price">${product.originalPrice.toLocaleString()}원</span>` : '';
-    
-    const discountRate = product.originalPrice ? 
-        Math.round((1 - product.price / product.originalPrice) * 100) : 0;
-    
-    const discountHtml = discountRate > 0 ? 
-        `<span class="discount-rate">${discountRate}% 할인</span>` : '';
+    const discountRate = product.originalPrice ? Math.round((1 - product.price / product.originalPrice) * 100) : 0;
     
     return `
         <div class="product-card" data-product-id="${product.id}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
-                <div class="product-badges">
-                    ${badges}
-                </div>
-                <div class="product-actions">
-                    <button class="action-btn wishlist-btn" data-product-id="${product.id}">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <button class="action-btn quick-view-btn" data-product-id="${product.id}">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                </div>
+                ${discountRate >= 30 ? '<div class="product-badge sale">특가</div>' : ''}
+                ${product.reviewCount > 200 ? '<div class="product-badge best">인기</div>' : ''}
             </div>
             <div class="product-info">
-                <div class="product-category">${categoryConfig[product.category].name}</div>
                 <h4>${product.name}</h4>
-                <div class="product-rating">
-                    <div class="stars">
-                        ${generateStars(product.rating)}
-                    </div>
-                    <span class="rating-count">(${product.reviewCount})</span>
-                </div>
-                <p class="product-desc">${product.description}</p>
                 <div class="product-price">
-                    <div class="price-info">
-                        ${originalPriceHtml}
-                        <span class="sale-price">${product.price.toLocaleString()}원</span>
-                    </div>
-                    ${discountHtml}
+                    <span class="sale-price">${product.price.toLocaleString()}<small>원</small></span>
                 </div>
-                <div class="product-actions">
-                    <button class="add-to-cart" data-product-id="${product.id}">
-                        장바구니
-                    </button>
-                    <button class="buy-now" data-product-id="${product.id}">
-                        구매하기
-                    </button>
+                <div class="product-meta">
+                    <span class="product-badge-small delivery">친국배</span>
+                    <span class="product-stats">구매 ${Math.floor(product.reviewCount / 10)} · 후기 ${product.reviewCount}</span>
                 </div>
             </div>
         </div>
@@ -453,134 +351,28 @@ function generateStars(rating) {
 }
 
 function initializeFilters() {
-    // Filter toggle
-    const filterBtn = document.querySelector('.filter-btn');
-    const filterPanel = document.getElementById('filterPanel');
-    
-    filterBtn.addEventListener('click', function() {
-        filterPanel.classList.toggle('active');
-        this.classList.toggle('active');
-    });
-    
-    // Sort select
-    const sortSelect = document.getElementById('sortSelect');
-    sortSelect.addEventListener('change', function() {
-        currentSort = this.value;
-        applyFiltersAndSort();
-    });
-    
-    // Price presets
-    const pricePresets = document.querySelectorAll('.price-preset');
-    pricePresets.forEach(preset => {
-        preset.addEventListener('click', function() {
-            pricePresets.forEach(p => p.classList.remove('active'));
+    // 필터 칩 클릭 이벤트
+    const filterChips = document.querySelectorAll('.filter-chip');
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            filterChips.forEach(c => c.classList.remove('active'));
             this.classList.add('active');
-            
-            const minPrice = parseInt(this.dataset.min);
-            const maxPrice = parseInt(this.dataset.max);
-            
-            document.getElementById('minPrice').value = minPrice;
-            document.getElementById('maxPrice').value = maxPrice === 999999 ? '' : maxPrice;
-            
-            currentFilters.minPrice = minPrice;
-            currentFilters.maxPrice = maxPrice === 999999 ? null : maxPrice;
+            // 필터링 로직은 나중에 추가
         });
     });
     
-    // Price inputs
-    const minPriceInput = document.getElementById('minPrice');
-    const maxPriceInput = document.getElementById('maxPrice');
-    
-    minPriceInput.addEventListener('change', function() {
-        currentFilters.minPrice = this.value ? parseInt(this.value) : null;
-    });
-    
-    maxPriceInput.addEventListener('change', function() {
-        currentFilters.maxPrice = this.value ? parseInt(this.value) : null;
-    });
-    
-    // Filter checkboxes
-    const filterCheckboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
-    filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const filterType = this.closest('.filter-group').querySelector('h4').textContent;
-            const value = this.value;
-            
-            if (filterType === '꽃 종류') {
-                if (this.checked) {
-                    currentFilters.types.push(value);
-                } else {
-                    currentFilters.types = currentFilters.types.filter(t => t !== value);
-                }
-            } else if (filterType === '용도') {
-                if (this.checked) {
-                    currentFilters.purposes.push(value);
-                } else {
-                    currentFilters.purposes = currentFilters.purposes.filter(p => p !== value);
-                }
-            }
+    // 전체보기 버튼
+    const filterResetBtn = document.querySelector('.filter-reset-btn');
+    if (filterResetBtn) {
+        filterResetBtn.addEventListener('click', function() {
+            filterChips.forEach(c => c.classList.remove('active'));
+            filterChips[0].classList.add('active');
         });
-    });
-    
-    // Color options
-    const colorOptions = document.querySelectorAll('.color-option');
-    colorOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const color = this.dataset.color;
-            
-            if (this.classList.contains('active')) {
-                currentFilters.colors.push(color);
-            } else {
-                currentFilters.colors = currentFilters.colors.filter(c => c !== color);
-            }
-        });
-    });
-    
-    // Filter actions
-    document.querySelector('.reset-filters').addEventListener('click', resetFilters);
-    document.querySelector('.apply-filters').addEventListener('click', function() {
-        applyFiltersAndSort();
-        filterPanel.classList.remove('active');
-        filterBtn.classList.remove('active');
-    });
-}
-
-function resetFilters() {
-    // Reset filter state
-    currentFilters = {
-        minPrice: null,
-        maxPrice: null,
-        types: [],
-        colors: [],
-        purposes: []
-    };
-    
-    // Reset UI
-    document.getElementById('minPrice').value = '';
-    document.getElementById('maxPrice').value = '';
-    document.querySelectorAll('.price-preset').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll('.color-option').forEach(co => co.classList.remove('active'));
-    
-    // Apply filters
-    applyFiltersAndSort();
+    }
 }
 
 function initializeEventListeners() {
-    // Load more button
-    document.getElementById('loadMoreBtn').addEventListener('click', function() {
-        const loadingSpinner = document.getElementById('loadingSpinner');
-        
-        this.style.display = 'none';
-        loadingSpinner.style.display = 'block';
-        
-        setTimeout(() => {
-            currentPage++;
-            renderProducts();
-            loadingSpinner.style.display = 'none';
-        }, 1000);
-    });
+    // 추가 이벤트 리스너가 필요한 경우 여기에 작성
 }
 
 function initializeProductCards() {
