@@ -1354,12 +1354,21 @@ Footer */
         height: 100vh;
     }
 
+    .slide-content {
+        padding: 0 20px;
+    }
+
     .slide-content h2 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        line-height: 1.2;
     }
 
     .slide-content p {
         font-size: 14px;
+        white-space: nowrap;
+        line-height: 1.4;
     }
 
     .hero-nav {
