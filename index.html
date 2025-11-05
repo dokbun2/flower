@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꽃집처녀 - 꽃으로 전하는 마음</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header with Hero -->
+    <div class="hero-header-wrapper">
+        <header class="header header-overlay">
+            <div class="container">
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1><i class="fas fa-seedling"></i> 꽃집처녀</h1>
+                        </a>
+                    </div>
+
+                    <div class="header-center">
+                        <div class="search-box">
+                            <input type="text" placeholder="원하는 꽃을 검색해보세요">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                        <a href="#" class="icon-btn cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link">오늘도착+</a></li>
+                        <li><a href="celebration-wreath.html" class="nav-link">트렌드픽</a></li>
+                        <li><a href="category.html?category=bouquet" class="nav-link">DIY꽃시장</a></li>
+                        <li><a href="category.html?category=congratulation" class="nav-link">정기구독</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <div class="slide-image">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_0.png" alt="아티스트 컬렉션">
+                    </div>
+                    <div class="slide-content">
+                        <h2>아티스트 컬렉션</h2>
+                        <p>by GODA</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_0.png" alt="특별한 날">
+                    </div>
+                    <div class="slide-content">
+                        <h2>특별한 날을 위한</h2>
+                        <p>아름다운 꽃다발</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_0.png" alt="계절의 꽃">
+                    </div>
+                    <div class="slide-content">
+                        <h2>계절을 담은</h2>
+                        <p>신선한 꽃</p>
+                    </div>
+                </div>
+            </div>
+            <button class="hero-nav prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="hero-nav next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="hero-dots">
+                <span class="hero-dot active" onclick="currentSlide(0)"></span>
+                <span class="hero-dot" onclick="currentSlide(1)"></span>
+                <span class="hero-dot" onclick="currentSlide(2)"></span>
+            </div>
+        </section>
+    </div>
+
+    <!-- Quick Order -->
+    <section class="quick-order">
+        <div class="container">
+            <div class="quick-categories">
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="꽃다발">
+                    </div>
+                    <h4>꽃다발</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="개업축하">
+                    </div>
+                    <h4>개업축하</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="승진/취임">
+                    </div>
+                    <h4>승진/취임</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="결혼/장례">
+                    </div>
+                    <h4>결혼/장례</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="플랜테리어">
+                    </div>
+                    <h4>플랜테리어</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="명화리안">
+                    </div>
+                    <h4>명화리안</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="양동이란">
+                    </div>
+                    <h4>양동이란</h4>
+                </a>
+                <a href="celebration-wreath.html" class="quick-item">
+                    <div class="quick-icon-img">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="시즌상품">
+                    </div>
+                    <h4>시즌상품</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Slider -->
+    <section class="new-arrivals-slider">
+        <div class="container">
+            <div class="section-header">
+                <h3>신규상품</h3>
+                <a href="celebration-wreath.html" class="view-all-link">신규상품 더보기 →</a>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="수채화고무나무">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="가지마루">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="계절 꽃바구니">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="미니 연화죽">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="아레카야자">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="올리브">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="계절 꽃다발">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="겐차야자">
+                </div>
+                <!-- 복제된 아이템들 (무한 스크롤용) -->
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="수채화고무나무">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="가지마루">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="계절 꽃바구니">
+                </div>
+                <div class="slider-item">
+                    <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="미니 연화죽">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h3>베스트 상품</h3>
+                <a href="celebration-wreath.html" class="view-all-link">전체보기 →</a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png"
+                            alt="프리미엄 장미 꽃다발">
+                        <div class="product-badge">베스트</div>
+                    </div>
+                    <div class="product-info">
+                        <h4>프리미엄 장미 꽃다발</h4>
+                        <p class="product-desc">신선한 빨간 장미 20송이로 구성된 럭셔리 꽃다발</p>
+                        <div class="product-price">
+                            <span class="original-price">80,000원</span>
+                            <span class="sale-price">65,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="혼합 꽃다발">
+                        <div class="product-badge">신상품</div>
+                    </div>
+                    <div class="product-info">
+                        <h4>혼합 꽃다발</h4>
+                        <p class="product-desc">다양한 계절 꽃으로 구성된 화사한 꽃다발</p>
+                        <div class="product-price">
+                            <span class="sale-price">45,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png"
+                            alt="해바라기 꽃다발">
+                    </div>
+                    <div class="product-info">
+                        <h4>해바라기 꽃다발</h4>
+                        <p class="product-desc">밝고 긍정적인 에너지를 전하는 해바라기</p>
+                        <div class="product-price">
+                            <span class="sale-price">35,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png"
+                            alt="관엽식물 화분">
+                    </div>
+                    <div class="product-info">
+                        <h4>관엽식물 화분</h4>
+                        <p class="product-desc">실내 공기정화에 좋은 관엽식물</p>
+                        <div class="product-price">
+                            <span class="sale-price">25,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="축하화환">
+                    </div>
+                    <div class="product-info">
+                        <h4>축하3단화환</h4>
+                        <p class="product-desc">개업 축하용 화환</p>
+                        <div class="product-price">
+                            <span class="original-price">125,000원</span>
+                            <span class="sale-price">85,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="프리미엄 화환">
+                    </div>
+                    <div class="product-info">
+                        <h4>프리미엄 화환</h4>
+                        <p class="product-desc">고급스러운 축하 화환</p>
+                        <div class="product-price">
+                            <span class="original-price">180,000원</span>
+                            <span class="sale-price">120,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_1.png" alt="꽃바구니">
+                    </div>
+                    <div class="product-info">
+                        <h4>꽃바구니</h4>
+                        <p class="product-desc">다양한 용도의 꽃바구니</p>
+                        <div class="product-price">
+                            <span class="sale-price">55,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/781b0120-8c5e-4fc7-8d2e-e00f8439266f/0_3.png" alt="동양란">
+                    </div>
+                    <div class="product-info">
+                        <h4>프리미엄 동양란</h4>
+                        <p class="product-desc">품격있는 동양란</p>
+                        <div class="product-price">
+                            <span class="sale-price">180,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/653e5ae0-5981-4418-93af-34fed499ea12/0_2.png" alt="서양란">
+                    </div>
+                    <div class="product-info">
+                        <h4>호접란</h4>
+                        <p class="product-desc">우아한 서양란</p>
+                        <div class="product-price">
+                            <span class="sale-price">150,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.midjourney.com/f3006714-a5da-4371-867a-ec9267d48057/0_3.png" alt="금전수">
+                    </div>
+                    <div class="product-info">
+                        <h4>금전수</h4>
+                        <p class="product-desc">행운을 상징하는 금전수</p>
+                        <div class="product-price">
+                            <span class="sale-price">50,000원</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">장바구니</button>
+                            <button class="buy-now">구매하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>당일 배송</h4>
+                    <p>오후 2시 이전 주문시<br>당일 배송 가능</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>신선 보장</h4>
+                    <p>매일 새벽 직접 공수한<br>신선한 꽃만 사용</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>맞춤 제작</h4>
+                    <p>고객의 요청에 맞춘<br>개인 맞춤 꽃다발</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>24시간 상담</h4>
+                    <p>언제든지 문의하세요<br>친절한 상담 서비스</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>월드플라워</h4>
+                    <p>꽃으로 전하는 진심, 월드플라워와 함께하세요.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>고객센터</h4>
+                    <ul>
+                        <li>문의전화: 1855-4929</li>
+                        <li>FAX: 02-597-1557</li>
+                        <li>이메일: jungg6642@naver.com</li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li>상호: 월드플라워</li>
+                        <li>대표자: 정석진</li>
+                        <li>사업자등록번호: 214-90-63551</li>
+                        <li>통신판매업 신고번호: 제 2016-경기과천-0025호</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>주소 및 안내</h4>
+                    <ul>
+                        <li>경기도 과천시 은행나무1길 54</li>
+                        <li style="margin-top: 12px; font-size: 11px; line-height: 1.6;">공정거래위원회 고시 제2000-1호에 따른 사업자
+                            등록번호 안내</li>
+                        <li style="font-size: 11px; color: #e91e63;">※ 광고 영업 전화시 네이버 및 포털매체로 컴플레인 진행 예정</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright ⓒ 2025~ 월드플라워 All Rights Reserved.</p>
+                <p style="margin-top: 8px; font-size: 11px;">Contact webmaster for more information.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="bottom-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>홈</span>
+        </a>
+        <button class="bottom-nav-item mobile-category-btn">
+            <i class="fas fa-th-large"></i>
+            <span>카테고리</span>
+        </button>
+        <button class="bottom-nav-item mobile-search-btn">
+            <i class="fas fa-search"></i>
+            <span>검색</span>
+        </button>
+        <a href="tel:1855-4929" class="bottom-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>전화</span>
+        </a>
+        <a href="#" class="bottom-nav-item cart-nav">
+            <i class="fas fa-shopping-cart"></i>
+            <span>장바구니</span>
+        </a>
+    </nav>
+
+    <!-- Mobile Search Modal -->
+    <div class="mobile-search-modal">
+        <div class="mobile-search-header">
+            <button class="mobile-search-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>검색</h3>
+        </div>
+        <div class="mobile-search-content">
+            <div class="mobile-search-box">
+                <input type="text" placeholder="원하는 꽃을 검색해보세요" id="mobileSearchInput">
+                <button type="submit" id="mobileSearchSubmit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

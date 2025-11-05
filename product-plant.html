@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관엽식물 화분 - 플라워샵</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 1588-1234</span>
+                    <span><i class="fas fa-clock"></i> 평일 09:00-18:00</span>
+                </div>
+                <div class="user-menu">
+                    <a href="#" class="login-btn">로그인</a>
+                    <a href="#" class="signup-btn">회원가입</a>
+                    <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> 장바구니</a>
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html"><h1><i class="fas fa-seedling"></i> 플라워샵</h1></a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="category.html" class="nav-link">꽃다발</a></li>
+                        <li><a href="category.html?category=wreath" class="nav-link">화환</a></li>
+                        <li><a href="category.html?category=plant" class="nav-link active">축하화분</a></li>
+                        <li><a href="#" class="nav-link">이벤트</a></li>
+                        <li><a href="#" class="nav-link">고객센터</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="원하는 꽃을 검색해보세요">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">홈</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="category.html?category=plant">축하화분</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>관엽식물 화분</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="#" alt="관엽식물 화분" id="mainImage">
+                        <div class="image-placeholder">🌿</div>
+                        <div class="image-badges">
+                            <span class="badge fresh">공기정화</span>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" data-image="1">
+                            <div class="thumb-placeholder">🌿</div>
+                        </div>
+                        <div class="thumbnail" data-image="2">
+                            <div class="thumb-placeholder">🪴</div>
+                        </div>
+                        <div class="thumbnail" data-image="3">
+                            <div class="thumb-placeholder">🌱</div>
+                        </div>
+                        <div class="thumbnail" data-image="4">
+                            <div class="thumb-placeholder">📦</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1>관엽식물 화분</h1>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(4.4) 리뷰 38개</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="sale-price">25,000원</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>실내 공기정화에 탁월한 효과가 있는 관엽식물 화분입니다. 
+                        키우기 쉽고 관리가 간편하여 초보자도 부담없이 기를 수 있으며, 
+                        실내 인테리어 효과까지 더해주는 실용적인 선물입니다.</p>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>식물 종류</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-price="25000">몬스테라</button>
+                                <button class="option-btn" data-price="30000">고무나무 (+5,000원)</button>
+                                <button class="option-btn" data-price="35000">아레카야자 (+10,000원)</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>화분 크기</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-extra="0">소형 (기본)</button>
+                                <button class="option-btn" data-extra="10000">중형 (+10,000원)</button>
+                                <button class="option-btn" data-extra="20000">대형 (+20,000원)</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>화분 디자인</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-design="0">기본 화분</button>
+                                <button class="option-btn" data-design="5000">세라믹 화분 (+5,000원)</button>
+                                <button class="option-btn" data-design="8000">디자인 화분 (+8,000원)</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>관리 가이드</label>
+                            <div class="message-card">
+                                <input type="checkbox" id="careGuide" checked>
+                                <label for="careGuide">식물 관리 가이드북 포함 (무료)</label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>배송 옵션</label>
+                            <div class="delivery-options">
+                                <div class="delivery-option">
+                                    <input type="radio" id="standard" name="delivery" value="standard" checked>
+                                    <label for="standard">
+                                        <strong>일반 배송</strong>
+                                        <span>2-3일 내 배송 (화분 전용 포장)</span>
+                                        <span class="delivery-fee">무료</span>
+                                    </label>
+                                </div>
+                                <div class="delivery-option">
+                                    <input type="radio" id="premium" name="delivery" value="premium">
+                                    <label for="premium">
+                                        <strong>프리미엄 배송</strong>
+                                        <span>당일/익일 배송 + 설치 서비스</span>
+                                        <span class="delivery-fee">+10,000원</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity and Total -->
+                    <div class="quantity-section">
+                        <div class="quantity-control">
+                            <label>수량</label>
+                            <div class="quantity-input">
+                                <button type="button" class="qty-btn minus">-</button>
+                                <input type="number" value="1" min="1" max="5" id="quantity">
+                                <button type="button" class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="total-price">
+                            <span>총 금액</span>
+                            <span class="total-amount">25,000원</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            장바구니 담기
+                        </button>
+                        <button class="btn-buy">
+                            바로 구매하기
+                        </button>
+                        <button class="btn-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>공기정화 효과</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-home"></i>
+                            <span>인테리어 효과</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-seedling"></i>
+                            <span>키우기 쉬움</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-book"></i>
+                            <span>관리 가이드</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="description">상품 상세</button>
+                <button class="tab-btn" data-tab="care">관리 방법</button>
+                <button class="tab-btn" data-tab="reviews">리뷰 (38)</button>
+                <button class="tab-btn" data-tab="delivery">배송/교환</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Description Tab -->
+                <div class="tab-pane active" id="description">
+                    <div class="product-detail-content">
+                        <h3>상품 상세 정보</h3>
+                        
+                        <div class="detail-section">
+                            <h4>🌿 관엽식물 화분 특징</h4>
+                            <ul>
+                                <li>실내 공기정화 효과가 뛰어난 식물</li>
+                                <li>초보자도 쉽게 키울 수 있는 관리 용이성</li>
+                                <li>실내 인테리어 효과까지 더하는 아름다운 외관</li>
+                                <li>스트레스 완화 및 심리적 안정감 제공</li>
+                                <li>오래도록 함께할 수 있는 의미있는 선물</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>📏 상품 규격</h4>
+                            <table class="spec-table">
+                                <tr>
+                                    <td>식물 종류</td>
+                                    <td>몬스테라 (기본)</td>
+                                </tr>
+                                <tr>
+                                    <td>화분 크기</td>
+                                    <td>소형: 지름 15cm, 중형: 20cm, 대형: 25cm</td>
+                                </tr>
+                                <tr>
+                                    <td>식물 높이</td>
+                                    <td>약 30-50cm (크기별 상이)</td>
+                                </tr>
+                                <tr>
+                                    <td>관리 난이도</td>
+                                    <td>쉬움 (초보자 추천)</td>
+                                </tr>
+                                <tr>
+                                    <td>배치 장소</td>
+                                    <td>실내 밝은 곳 (직사광선 피함)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Care Tab -->
+                <div class="tab-pane" id="care">
+                    <div class="product-detail-content">
+                        <h3>식물 관리 방법</h3>
+                        
+                        <div class="detail-section">
+                            <h4>💧 물주기</h4>
+                            <ul>
+                                <li>흙 표면이 마르면 충분히 물을 주세요</li>
+                                <li>여름: 주 2-3회, 겨울: 주 1-2회</li>
+                                <li>화분 밑으로 물이 흘러나올 때까지 충분히</li>
+                                <li>받침대에 고인 물은 30분 후 제거</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>☀️ 빛 관리</h4>
+                            <ul>
+                                <li>밝은 간접광이 있는 곳에 배치</li>
+                                <li>직사광선은 잎이 탈 수 있으니 피해주세요</li>
+                                <li>하루 4-6시간 정도의 밝은 빛 필요</li>
+                                <li>창가에서 1-2m 떨어진 곳이 적당</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>🌡️ 온도 및 습도</h4>
+                            <ul>
+                                <li>적정 온도: 18-25°C</li>
+                                <li>습도: 40-60% 유지</li>
+                                <li>에어컨이나 히터 바람 직접 노출 금지</li>
+                                <li>분무기로 잎에 가끔 물을 뿌려주세요</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane" id="reviews">
+                    <div class="reviews-section">
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="rating-score">
+                                    <span class="score">4.4</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="total-reviews">38개 리뷰</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">정**</span>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2024.10.24</span>
+                                </div>
+                                <div class="review-content">
+                                    <p>관리가 정말 쉽고 집안 분위기가 확 달라졌어요. 관리 가이드북도 자세해서 초보자인 저도 잘 키우고 있습니다!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Tab -->
+                <div class="tab-pane" id="delivery">
+                    <div class="delivery-info">
+                        <div class="info-section">
+                            <h4>🚚 배송 안내</h4>
+                            <ul>
+                                <li><strong>일반배송:</strong> 2-3일 내 배송 (화분 전용 포장, 무료)</li>
+                                <li><strong>프리미엄배송:</strong> 당일/익일 배송 + 설치 서비스 (+10,000원)</li>
+                                <li><strong>배송시간:</strong> 오전 9시~오후 6시</li>
+                                <li><strong>주의사항:</strong> 식물 특성상 배송 중 약간의 잎 떨어짐은 정상</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>플라워샵</h4>
+                    <p>꽃으로 전하는 진심, 플라워샵과 함께하세요.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>고객센터</h4>
+                    <ul>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">배송 안내</a></li>
+                        <li><a href="#">교환/반품</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li>대표: 이용준</li>
+                        <li>사업자등록번호: 123-45-67890</li>
+                        <li>전화: 1588-1234</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>운영시간</h4>
+                    <ul>
+                        <li>평일: 09:00 - 18:00</li>
+                        <li>토요일: 09:00 - 15:00</li>
+                        <li>일요일/공휴일: 휴무</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 플라워샵. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

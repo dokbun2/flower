@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해바라기 꽃다발 - 플라워샵</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 1588-1234</span>
+                    <span><i class="fas fa-clock"></i> 평일 09:00-18:00</span>
+                </div>
+                <div class="user-menu">
+                    <a href="#" class="login-btn">로그인</a>
+                    <a href="#" class="signup-btn">회원가입</a>
+                    <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> 장바구니</a>
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html"><h1><i class="fas fa-seedling"></i> 플라워샵</h1></a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="category.html" class="nav-link active">꽃다발</a></li>
+                        <li><a href="category.html?category=wreath" class="nav-link">화환</a></li>
+                        <li><a href="category.html?category=plant" class="nav-link">축하화분</a></li>
+                        <li><a href="#" class="nav-link">이벤트</a></li>
+                        <li><a href="#" class="nav-link">고객센터</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="원하는 꽃을 검색해보세요">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">홈</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="category.html">꽃다발</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>해바라기 꽃다발</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="#" alt="해바라기 꽃다발" id="mainImage">
+                        <div class="image-placeholder">🌻</div>
+                        <div class="image-badges">
+                            <span class="badge fresh">신선보장</span>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" data-image="1">
+                            <div class="thumb-placeholder">🌻</div>
+                        </div>
+                        <div class="thumbnail" data-image="2">
+                            <div class="thumb-placeholder">🌞</div>
+                        </div>
+                        <div class="thumbnail" data-image="3">
+                            <div class="thumb-placeholder">🎀</div>
+                        </div>
+                        <div class="thumbnail" data-image="4">
+                            <div class="thumb-placeholder">📦</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1>해바라기 꽃다발</h1>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">(4.6) 리뷰 56개</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="sale-price">35,000원</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>밝고 긍정적인 에너지를 전하는 해바라기 꽃다발입니다. 
+                        태양을 닮은 노란 해바라기가 보는 이의 마음을 환하게 밝혀주며, 
+                        생일이나 축하의 순간에 완벽한 선물이 됩니다.</p>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>해바라기 개수</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-price="35000">10송이 (기본)</button>
+                                <button class="option-btn" data-price="50000">15송이 (+15,000원)</button>
+                                <button class="option-btn" data-price="70000">20송이 (+35,000원)</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>포장 스타일</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-extra="0">기본 포장</button>
+                                <button class="option-btn" data-extra="8000">프리미엄 포장 (+8,000원)</button>
+                                <button class="option-btn" data-extra="15000">럭셔리 박스 (+15,000원)</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>메시지 카드</label>
+                            <div class="message-card">
+                                <input type="checkbox" id="messageCard" checked>
+                                <label for="messageCard">메시지 카드 추가 (무료)</label>
+                                <textarea placeholder="전하고 싶은 메시지를 입력해주세요 (최대 100자)" maxlength="100"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>배송 옵션</label>
+                            <div class="delivery-options">
+                                <div class="delivery-option">
+                                    <input type="radio" id="same-day" name="delivery" value="same-day" checked>
+                                    <label for="same-day">
+                                        <strong>당일 배송</strong>
+                                        <span>오후 2시 이전 주문시 당일 배송</span>
+                                        <span class="delivery-fee">+5,000원</span>
+                                    </label>
+                                </div>
+                                <div class="delivery-option">
+                                    <input type="radio" id="next-day" name="delivery" value="next-day">
+                                    <label for="next-day">
+                                        <strong>익일 배송</strong>
+                                        <span>다음날 오전 배송</span>
+                                        <span class="delivery-fee">무료</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity and Total -->
+                    <div class="quantity-section">
+                        <div class="quantity-control">
+                            <label>수량</label>
+                            <div class="quantity-input">
+                                <button type="button" class="qty-btn minus">-</button>
+                                <input type="number" value="1" min="1" max="10" id="quantity">
+                                <button type="button" class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="total-price">
+                            <span>총 금액</span>
+                            <span class="total-amount">40,000원</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            장바구니 담기
+                        </button>
+                        <button class="btn-buy">
+                            바로 구매하기
+                        </button>
+                        <button class="btn-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>당일배송 가능</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>신선도 보장</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gift"></i>
+                            <span>무료 포장</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sun"></i>
+                            <span>긍정 에너지</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="description">상품 상세</button>
+                <button class="tab-btn" data-tab="reviews">리뷰 (56)</button>
+                <button class="tab-btn" data-tab="qna">문의 (3)</button>
+                <button class="tab-btn" data-tab="delivery">배송/교환</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Description Tab -->
+                <div class="tab-pane active" id="description">
+                    <div class="product-detail-content">
+                        <h3>상품 상세 정보</h3>
+                        
+                        <div class="detail-section">
+                            <h4>🌻 해바라기 꽃다발 특징</h4>
+                            <ul>
+                                <li>밝고 화사한 노란색으로 긍정적인 에너지 전달</li>
+                                <li>크고 풍성한 해바라기만을 엄선하여 사용</li>
+                                <li>생일, 축하, 응원의 의미로 완벽한 선물</li>
+                                <li>오래도록 신선함을 유지하는 품질</li>
+                                <li>보는 이의 마음을 밝게 만드는 특별한 꽃</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>📏 상품 규격</h4>
+                            <table class="spec-table">
+                                <tr>
+                                    <td>꽃 종류</td>
+                                    <td>해바라기 (Sunflower)</td>
+                                </tr>
+                                <tr>
+                                    <td>기본 구성</td>
+                                    <td>해바라기 10송이 + 그린</td>
+                                </tr>
+                                <tr>
+                                    <td>전체 길이</td>
+                                    <td>약 50cm</td>
+                                </tr>
+                                <tr>
+                                    <td>꽃 크기</td>
+                                    <td>대형 (지름 12-15cm)</td>
+                                </tr>
+                                <tr>
+                                    <td>보관 방법</td>
+                                    <td>서늘한 곳, 충분한 물 공급</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>💝 추천 상황</h4>
+                            <div class="occasion-grid">
+                                <div class="occasion-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span>생일선물</span>
+                                </div>
+                                <div class="occasion-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>졸업축하</span>
+                                </div>
+                                <div class="occasion-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>성공축하</span>
+                                </div>
+                                <div class="occasion-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>응원선물</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane" id="reviews">
+                    <div class="reviews-section">
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="rating-score">
+                                    <span class="score">4.6</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="total-reviews">56개 리뷰</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">최**</span>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2024.10.26</span>
+                                </div>
+                                <div class="review-content">
+                                    <p>해바라기가 정말 크고 싱싱해요! 받는 분이 너무 좋아하셨고, 보기만 해도 기분이 좋아지는 것 같아요. 추천합니다!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q&A Tab -->
+                <div class="tab-pane" id="qna">
+                    <div class="qna-section">
+                        <button class="write-question-btn">문의하기</button>
+                        <div class="qna-list">
+                            <!-- Q&A items would go here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Tab -->
+                <div class="tab-pane" id="delivery">
+                    <div class="delivery-info">
+                        <div class="info-section">
+                            <h4>🚚 배송 안내</h4>
+                            <ul>
+                                <li><strong>당일배송:</strong> 오후 2시 이전 주문시 당일 배송 (+5,000원)</li>
+                                <li><strong>익일배송:</strong> 다음날 오전 배송 (무료배송)</li>
+                                <li><strong>배송시간:</strong> 오전 9시~오후 6시</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>플라워샵</h4>
+                    <p>꽃으로 전하는 진심, 플라워샵과 함께하세요.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>고객센터</h4>
+                    <ul>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">배송 안내</a></li>
+                        <li><a href="#">교환/반품</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li>대표: 이용준</li>
+                        <li>사업자등록번호: 123-45-67890</li>
+                        <li>전화: 1588-1234</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>운영시간</h4>
+                    <ul>
+                        <li>평일: 09:00 - 18:00</li>
+                        <li>토요일: 09:00 - 15:00</li>
+                        <li>일요일/공휴일: 휴무</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 플라워샵. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꽃다발 - 꽃집처녀</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="category.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 1588-1234</span>
+                    <span><i class="fas fa-clock"></i> 평일 09:00-18:00</span>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="원하는 꽃을 검색해보세요">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-menu">
+                    <a href="#" class="login-btn">로그인</a>
+                    <a href="#" class="signup-btn">회원가입</a>
+                    <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> 장바구니</a>
+                </div>
+            </div>
+
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><i class="fas fa-seedling"></i> 꽃집처녀</h1>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="celebration-wreath.html" class="nav-link">축하화환</a></li>
+                        <li><a href="category.html?category=condolence" class="nav-link">근조화환</a></li>
+                        <li><a href="category.html?category=rice" class="nav-link">쌀화환</a></li>
+                        <li><a href="category.html?category=opening" class="nav-link">1단·2단화환</a></li>
+                        <li><a href="category.html?category=congratulation" class="nav-link">동양란</a></li>
+                        <li><a href="category.html?category=western" class="nav-link">서양란</a></li>
+                        <li><a href="category.html?category=flower-basket" class="nav-link">관엽화분</a></li>
+                        <li><a href="category.html?category=bouquet" class="nav-link">꽃다발/꽃상자</a></li>
+                        <li><a href="category.html?category=flower-board" class="nav-link">금전수/스투키</a></li>
+                        <li><a href="category.html?category=money-tree" class="nav-link">꽃바구니</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">홈</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="categoryName">꽃다발</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Category Header -->
+    <section class="category-header">
+        <div class="container">
+            <div class="category-info">
+                <h1 id="categoryTitle">꽃다발</h1>
+                <p id="categoryDescription">특별한 순간을 더욱 아름답게 만들어줄 다양한 꽃다발을 만나보세요</p>
+            </div>
+            <div class="category-stats">
+                <span class="total-products">총 <strong id="productCount">24</strong>개 상품</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and Sort -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-header">
+                <div class="filter-toggle">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        필터
+                    </button>
+                </div>
+
+                <div class="sort-options">
+                    <select id="sortSelect">
+                        <option value="popular">인기순</option>
+                        <option value="price-low">가격 낮은순</option>
+                        <option value="price-high">가격 높은순</option>
+                        <option value="newest">최신순</option>
+                        <option value="rating">평점순</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-panel" id="filterPanel">
+                <div class="filter-group">
+                    <h4>가격대</h4>
+                    <div class="price-range">
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" placeholder="최소 가격" min="0">
+                            <span>~</span>
+                            <input type="number" id="maxPrice" placeholder="최대 가격" min="0">
+                        </div>
+                        <div class="price-presets">
+                            <button class="price-preset" data-min="0" data-max="50000">5만원 이하</button>
+                            <button class="price-preset" data-min="50000" data-max="100000">5-10만원</button>
+                            <button class="price-preset" data-min="100000" data-max="200000">10-20만원</button>
+                            <button class="price-preset" data-min="200000" data-max="999999">20만원 이상</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>꽃 종류</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="rose" checked>
+                            <span>장미</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="lily">
+                            <span>백합</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="carnation">
+                            <span>카네이션</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="sunflower">
+                            <span>해바라기</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="mixed">
+                            <span>혼합꽃다발</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>색상</h4>
+                    <div class="color-options">
+                        <button class="color-option" data-color="red" style="background: #e91e63;"></button>
+                        <button class="color-option" data-color="pink" style="background: #f8bbd9;"></button>
+                        <button class="color-option" data-color="white"
+                            style="background: #ffffff; border: 1px solid #ddd;"></button>
+                        <button class="color-option" data-color="yellow" style="background: #ffc107;"></button>
+                        <button class="color-option" data-color="purple" style="background: #9c27b0;"></button>
+                        <button class="color-option" data-color="mixed"
+                            style="background: linear-gradient(45deg, #e91e63, #ffc107, #9c27b0);"></button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>용도</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="birthday">
+                            <span>생일</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="anniversary">
+                            <span>기념일</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="proposal">
+                            <span>프로포즈</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="graduation">
+                            <span>졸업식</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="congratulation">
+                            <span>축하</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="reset-filters">필터 초기화</button>
+                    <button class="apply-filters">필터 적용</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>상품을 불러오는 중...</span>
+            </div>
+
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">더 많은 상품 보기</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>꽃집처녀</h4>
+                    <p>꽃으로 전하는 진심, 꽃집처녀와 함께하세요.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>고객센터</h4>
+                    <ul>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">배송 안내</a></li>
+                        <li><a href="#">교환/반품</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li>대표: 이용준</li>
+                        <li>사업자등록번호: 123-45-67890</li>
+                        <li>주소: 서울시 강남구 테헤란로 123</li>
+                        <li>전화: 1588-1234</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>운영시간</h4>
+                    <ul>
+                        <li>평일: 09:00 - 18:00</li>
+                        <li>토요일: 09:00 - 15:00</li>
+                        <li>일요일/공휴일: 휴무</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 꽃집처녀. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>홈</span>
+        </a>
+        <button class="bottom-nav-item mobile-category-btn">
+            <i class="fas fa-th-large"></i>
+            <span>카테고리</span>
+        </button>
+        <button class="bottom-nav-item mobile-search-btn">
+            <i class="fas fa-search"></i>
+            <span>검색</span>
+        </button>
+        <a href="tel:1855-4929" class="bottom-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>전화</span>
+        </a>
+        <a href="#" class="bottom-nav-item cart-nav">
+            <i class="fas fa-shopping-cart"></i>
+            <span>장바구니</span>
+        </a>
+    </nav>
+    
+    <!-- Mobile Search Modal -->
+    <div class="mobile-search-modal">
+        <div class="mobile-search-header">
+            <button class="mobile-search-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>검색</h3>
+        </div>
+        <div class="mobile-search-content">
+            <div class="mobile-search-box">
+                <input type="text" placeholder="원하는 꽃을 검색해보세요" id="mobileSearchInput">
+                <button type="submit" id="mobileSearchSubmit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="category.js"></script>
+</body>
+
+</html>
